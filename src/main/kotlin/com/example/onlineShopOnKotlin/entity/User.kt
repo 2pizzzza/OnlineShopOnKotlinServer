@@ -22,9 +22,11 @@ data class User(
     @Column
     val password:String,
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = arrayOf(CascadeType.ALL))
     @JoinTable(
-        name = "roles_users",
+        name = "users_roles",
+        joinColumns = [JoinColumn(name = "user_id", referencedColumnName = "id")],
+        inverseJoinColumns = [JoinColumn(name = "role_id", referencedColumnName = "id")]
     )
     val roles:ArrayList<Role>
 )
