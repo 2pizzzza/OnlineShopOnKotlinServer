@@ -1,10 +1,6 @@
 package com.example.onlineShopOnKotlin.entity
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Table
+import jakarta.persistence.*
 import lombok.AllArgsConstructor
 import lombok.Getter
 import lombok.NoArgsConstructor
@@ -25,4 +21,10 @@ data class User(
     val email:String,
     @Column
     val password:String,
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+        name = "roles_users",
+    )
+    val roles:ArrayList<Role>
 )
