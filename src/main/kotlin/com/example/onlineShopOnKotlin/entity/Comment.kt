@@ -23,5 +23,8 @@ class Comment(
 
 
     @ManyToMany(fetch = FetchType.LAZY)
-    val users: List<User> = mutableListOf()
+    val users: List<User> = mutableListOf(),
+
+    @Column(columnDefinition = "VARCHAR(255) DEFAULT 'amit'")
+    val text:String
 )
