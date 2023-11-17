@@ -53,9 +53,5 @@ public class JwtUtil {
         return createToken(claims, username, new Date(System.currentTimeMillis() + ACCESS_TOKEN_EXPIRATION_TIME));
     }
 
-    public String generateRefreshToken(String username) {
-        Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, username, new Date(System.currentTimeMillis() + REFRESH_TOKEN_EXPIRATION_TIME));
-    }
 
 }
