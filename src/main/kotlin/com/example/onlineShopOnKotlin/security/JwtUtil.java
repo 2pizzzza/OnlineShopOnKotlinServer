@@ -48,10 +48,6 @@ public class JwtUtil {
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-    public String generateToken(String username) {
-        Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, username, new Date(System.currentTimeMillis() + ACCESS_TOKEN_EXPIRATION_TIME));
-    }
 
 
 }
