@@ -14,6 +14,6 @@ class CommentControler {
 
     @GetMapping("/comment/all")
     fun getAllComment():List<Comment>{
-        return  commentService.getAllComment()
+        return commentService.getAllComment()
     }
 }
