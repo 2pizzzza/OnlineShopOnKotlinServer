@@ -58,8 +58,4 @@ public class JwtUtil {
         return createToken(claims, username, new Date(System.currentTimeMillis() + REFRESH_TOKEN_EXPIRATION_TIME));
     }
 
-    public Boolean validateRefreshToken(String refreshToken, UserDetails userDetails) {
-        final String username = extractUsername(refreshToken);
-        return (username.equals(userDetails.getUsername()) && !isTokenExpired(refreshToken));
-    }
 }
