@@ -1,17 +1,20 @@
 package com.example.onlineShopOnKotlin.dto
 
-import lombok.AllArgsConstructor
-import lombok.Getter
-import lombok.NoArgsConstructor
-import lombok.Setter
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.Table
+import lombok.*
+import lombok.experimental.FieldDefaults
 
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 class ProductDTO (
 
-    val id:Long,
+    @Id val id:Long,
 
     val name:String,
 
@@ -22,4 +25,5 @@ class ProductDTO (
     val text:String,
 
     val image:String
-)
+) {
+}

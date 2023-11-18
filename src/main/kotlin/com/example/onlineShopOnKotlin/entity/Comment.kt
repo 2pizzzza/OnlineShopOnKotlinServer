@@ -27,4 +27,5 @@ class Comment(
 
     @Column(columnDefinition = "VARCHAR(255) DEFAULT 'amit'")
     val text:String
+
 )
