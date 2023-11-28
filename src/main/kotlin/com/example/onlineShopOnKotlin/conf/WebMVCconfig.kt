@@ -6,10 +6,9 @@ import org.springframework.format.FormatterRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 @Configuration
-class WebMvcConfig : WebMvcConfigurer {
-
+class WebMvcConfig : org.springframework.web.servlet.config.annotation.WebMvcConfigurer {
     override fun addFormatters(registry: FormatterRegistry) {
-        registry.addConverter(StringToCommentConverter())
+        registry.addConverter
     }
 
 }
