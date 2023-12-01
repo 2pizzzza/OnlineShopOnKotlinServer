@@ -1,7 +1,6 @@
 package com.example.onlineShopOnKotlin.security;
 
-import com.oko.OKO_Project.entity.User;
-import com.oko.OKO_Project.repository.UserRepository;
+import com.example.onlineShopOnKotlin.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,6 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
+
 
 @Component
 public class DetailsUserService implements UserDetailsService {

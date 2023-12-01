@@ -16,10 +16,6 @@ import java.util.Collections;
 public class DetailsUser implements UserDetails {
     private final User user;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority(String.valueOf(user.getRole())));
-    }
 
     @Override
     public String getPassword() {
