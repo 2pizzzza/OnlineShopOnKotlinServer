@@ -21,7 +21,7 @@ public class DetailsUserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<User> user = Optional.of(userRepository.findByEmail(email));
         if (user.isEmpty())
-            throw new UsernameNotFoundException("Пользователь не найден!");
+            throw new UsernameNotFoundException("User not found!");
 
         return new DetailsUser(user.get());
     }
