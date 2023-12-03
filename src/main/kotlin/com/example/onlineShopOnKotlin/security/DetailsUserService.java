@@ -1,6 +1,7 @@
 package com.example.onlineShopOnKotlin.security;
 
 import com.example.onlineShopOnKotlin.entity.User;
+import com.example.onlineShopOnKotlin.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,7 +19,7 @@ public class DetailsUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<User> user = userRepository.findByEmail(email);
+        Optional<User> user = Optional.of(userRepository.findByEmail(email));
         if (user.isEmpty())
             throw new UsernameNotFoundException("Пользователь не найден!");
 
