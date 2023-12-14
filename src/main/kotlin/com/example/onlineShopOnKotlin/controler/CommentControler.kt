@@ -16,7 +16,6 @@ class CommentControler {
 
     @GetMapping("/comment/all")
     fun getAllComment():List<Comment>{
-        println("amit")
     return commentService.getAllComment()
     }
     @PostMapping("comment/")
