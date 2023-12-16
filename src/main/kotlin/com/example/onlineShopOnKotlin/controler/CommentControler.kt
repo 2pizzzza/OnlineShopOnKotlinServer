@@ -16,6 +16,7 @@ class CommentControler {
 
     @GetMapping("/comment/all")
     fun getAllComment():List<Comment>{
+        println("comment create ")
     return commentService.getAllComment()
     }
     @PostMapping("comment/")
