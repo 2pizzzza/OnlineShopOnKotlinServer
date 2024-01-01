@@ -16,12 +16,10 @@ class CommentControler {
 
     @GetMapping("/comment/all")
     fun getAllComment():List<Comment>{
-        println("comment create ")
     return commentService.getAllComment()
     }
     @PostMapping("comment/")
     fun createComment(@RequestBody comment: Comment): Comment {
-        println("Commetn create")
         return commentService.createComment(comment)
      } 
 }
